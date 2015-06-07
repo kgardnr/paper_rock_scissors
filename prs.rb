@@ -1,18 +1,21 @@
 require 'pry'
 
-def play_game
+OPTIONS = {"p" => "Paper", "r" => "Rock", "s" => "Scissors"}
 
+def play_game
+  
   def say(message)
     puts "=> #{message}"
   end
 
   say "Let's play Paper, Rock, Scissors!"
 
-  say "Choose one: P/R/S"
-  player_choice = gets.chomp.downcase
+  begin
+    say "Choose one: P/R/S"
+    player_choice = gets.chomp.downcase
+  end until OPTIONS.keys.include?(player_choice)
 
-  computer_options = ["p", "r", "s"]
-  computer_choice = computer_options.sample.downcase
+  computer_choice = OPTIONS.keys.sample
 
   case player_choice
   when "p"
