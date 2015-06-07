@@ -1,5 +1,3 @@
-require 'pry'
-
 OPTIONS = {"p" => "Paper", "r" => "Rock", "s" => "Scissors"}
 
 def play_game
