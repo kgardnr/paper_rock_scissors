@@ -6,6 +6,8 @@ def play_game
     puts "=> #{message}"
   end
 
+  say "Let's play Paper, Rock, Scissors!"
+
   say "Choose one: P/R/S"
   player_choice = gets.chomp.downcase
 
