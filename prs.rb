@@ -19,8 +19,12 @@ def tally_scores(scores, score)
 end
 
 def display_scores(player_scores, computer_scores)
-  puts "Your Score: #{player_scores}"
-  puts "Computer Score: #{computer_scores}"
+  puts "Your Score: #{total_score(player_scores)}"
+  puts "Computer Score: #{total_score(computer_scores)}"
+end
+
+def total_score(scores)
+  scores.inject(:+)
 end
 
 def play_game(player_scores = [], computer_scores = [])
