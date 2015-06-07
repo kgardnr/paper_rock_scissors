@@ -32,7 +32,6 @@ def play_game
 
   if player_choice == computer_choice
     say "It's a tie!"
-
   elsif player_choice == "p" && computer_choice == "r" ||
         player_choice == "r" && computer_choice == "s" ||
         player_choice == "s" && computer_choice == "p"
