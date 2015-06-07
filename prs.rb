@@ -1,22 +1,21 @@
 OPTIONS = {"p" => "Paper", "r" => "Rock", "s" => "Scissors"}
 
+def say(message)
+  puts "### #{message}"
+end
+
+def display_winning_message(winning_choice)
+  case winning_choice
+  when "p"
+    say "Paper covers Rock."
+  when "r"
+    say "Rock breaks Scissors."
+  when "s"
+    say "Scissors cuts Paper."
+  end
+end
+
 def play_game
-  
-  def say(message)
-    puts "### #{message}"
-  end
-
-  def display_winning_message(winning_choice)
-    case winning_choice
-    when "p"
-      say "Paper covers Rock."
-    when "r"
-      say "Rock breaks Scissors."
-    when "s"
-      say "Scissors cuts Paper."
-    end
-  end
-
   say "Let's play Paper, Rock, Scissors!"
 
   begin
@@ -48,7 +47,6 @@ def play_game
   else
     say "Thanks for playing!"
   end
-
 end
 
 play_game
