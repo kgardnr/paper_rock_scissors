@@ -23,10 +23,7 @@ def display_scores(player_scores, computer_scores)
   puts "Computer Score: #{computer_scores}"
 end
 
-def play_game
-
-  player_scores = []
-  computer_scores = []
+def play_game(player_scores = [], computer_scores = [])
 
   say "Let's play Paper, Rock, Scissors!"
 
@@ -63,7 +60,7 @@ def play_game
   play_again = gets.chomp.downcase
 
   if play_again == "y"
-    play_game
+    play_game(player_scores, computer_scores)
   else
     say "Thanks for playing!"
   end
