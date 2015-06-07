@@ -6,12 +6,9 @@ end
 
 def display_winning_message(winning_choice)
   case winning_choice
-  when "p"
-    say "Paper covers Rock."
-  when "r"
-    say "Rock breaks Scissors."
-  when "s"
-    say "Scissors cuts Paper."
+  when "p" then say "Paper covers Rock."
+  when "r" then say "Rock breaks Scissors."
+  when "s" then say "Scissors cuts Paper."
   end
 end
 
