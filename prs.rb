@@ -1,3 +1,5 @@
+require 'pry'
+
 OPTIONS = {"p" => "Paper", "r" => "Rock", "s" => "Scissors"}
 
 def say(message)
@@ -12,7 +14,20 @@ def display_winning_message(winning_choice)
   end
 end
 
+def tally_scores(scores, score)
+  scores << score
+end
+
+def display_scores(player_scores, computer_scores)
+  puts "Your Score: #{player_scores}"
+  puts "Computer Score: #{computer_scores}"
+end
+
 def play_game
+
+  player_scores = []
+  computer_scores = []
+
   say "Let's play Paper, Rock, Scissors!"
 
   begin
@@ -26,15 +41,23 @@ def play_game
 
   if player_choice == computer_choice
     say "It's a tie!"
+    tally_scores(player_scores, 0)
+    tally_scores(computer_scores, 0)
   elsif player_choice == "p" && computer_choice == "r" ||
         player_choice == "r" && computer_choice == "s" ||
         player_choice == "s" && computer_choice == "p"
     display_winning_message(player_choice)
+    tally_scores(player_scores, 1)
+    tally_scores(computer_scores, 0)
     say "You win!"
   else
     display_winning_message(computer_choice)
+    tally_scores(computer_scores, 1)
+    tally_scores(player_scores, 0)
     say "The computer wins!"
   end 
+  
+  display_scores(player_scores, computer_scores)
 
   say "Play again? Y/N"
   play_again = gets.chomp.downcase
