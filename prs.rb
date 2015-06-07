@@ -48,6 +48,7 @@ def play_game
   else
     say "Thanks for playing!"
   end
+
 end
 
 play_game
